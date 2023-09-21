@@ -4,6 +4,8 @@
 
 int main(int argc, char** argv)
 {
+    srand(time(NULL));
+
     allTests();
 
     return 0;
