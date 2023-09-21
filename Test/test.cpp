@@ -6,6 +6,7 @@ void allTests()
 {
     HighLowWeights();
     FireNeuron();
+    SimpleNetwork();
 }
 
 // Record the highest and lowest output of 200 neurons
@@ -54,6 +55,33 @@ void FireNeuron()
     outputFile << "With Input [1, 0, 1] -" << std::endl
                << "Neuron 1: " << testNeuron1.Fire(input) << std::endl
                << "Neuron 2: " << testNeuron2.Fire(input) << std::endl;
+}
+
+// Very Simple demonstration of a Neural Network made manually with independant neurons
+void SimpleNetwork()
+{
+    outputFile << std::endl << "----- Untrained Network -----" << std::endl;
+    // Input neurons with 1 synapse
+    Neuron input1, input2, input3;
+
+    // Output neurons with 3 synapses
+    Neuron output1(3), output2(3);
+
+    // Input Values
+    double val1[] = {1}, val2[] = {0}, val3[] = {1};
+
+    // Pass Input into first layer of neurons, recording their output
+    double intermediate[] = {input1.Fire(val1), input2.Fire(val2), input3.Fire(val3)};
+
+    // Pass Intermediate into output, recording their output
+    double final[] = {output1.Fire(intermediate), output2.Fire(intermediate)};
+
+    // If the first output is higher, network things sum of input is positive
+    // Otherwise network things sum of input is negative
+    if (final[0] > final[1])
+        outputFile << "Network things 1 + 0 + 1 is Positive." << std::endl;
+    else
+        outputFile << "Network things 1 + 0 + 1 is Negative." << std::endl;
 }
 
 // Helper Method to compare doubles

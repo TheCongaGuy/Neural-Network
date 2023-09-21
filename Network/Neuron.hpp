@@ -1,4 +1,6 @@
 // Class represents a single neuron of a neural network
+// Using the following article as a reference: https://medium.com/analytics-vidhya/building-a-simple-neural-network-in-c-7e917e9fc2cc
+// Related Github Repo: https://github.com/lschmittalves/simple-neural-network
 #include <vector>
 #include <random>
 #include <time.h>
@@ -19,6 +21,9 @@ public:
     std::vector<double> getWeights();
     // Get's the registered number of synapses
     int getSynapseCount();
+
+    // Set the number of synapses
+    void setSynapseCount(int numSynapses);
 
 private:
     // Data Members

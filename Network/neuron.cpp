@@ -27,6 +27,19 @@ double Neuron::Fire(double input[])
 std::vector<double> Neuron::getWeights() { return weight; }
 int Neuron::getSynapseCount() { return inputSynapses; }
 
+// Set the number of synapses
+void Neuron::setSynapseCount(int numSynapses)
+{
+    // Clear current weights
+    weight.clear();
+
+    // Set new synapse count
+    inputSynapses = numSynapses;
+
+    // Reinitialize the current weights
+    __initWeights();
+}
+
 // Resizes vector container and generates randomized starting weights
 void Neuron::__initWeights()
 {
