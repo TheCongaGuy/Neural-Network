@@ -6,8 +6,8 @@
 class Neuron
 {
 public:
-    // Constructor
-    Neuron(int inputSynapses);
+    // Constructors
+    Neuron(int inputSynapses = 1);
 
     // Get's the weights of the neuron
     std::vector<double> getWeights();
