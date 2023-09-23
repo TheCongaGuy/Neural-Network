@@ -1,6 +1,7 @@
 // Class represents a single neuron of a neural network
 // Using the following article as a reference: https://medium.com/analytics-vidhya/building-a-simple-neural-network-in-c-7e917e9fc2cc
 // Related Github Repo: https://github.com/lschmittalves/simple-neural-network
+#pragma once
 #include <vector>
 #include <random>
 #include <time.h>
@@ -15,6 +16,7 @@ public:
     // Calculates what output is fired from the neuron given an input
     // Takes: an array of doubles with the same size as the synapse count
     // Returns: a normalized value between 0 and 1, representing the strength of the neuron's signal
+    double Fire(std::vector<double> input);
     double Fire(double input[]);
 
     // Get's the weights of the neuron

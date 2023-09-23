@@ -1,4 +1,5 @@
 // Test cases printed to a .log file
+#pragma once
 #include <fstream>
 #include "../Network/Network.hpp"
 
