@@ -61,27 +61,19 @@ void FireNeuron()
 void SimpleNetwork()
 {
     outputFile << std::endl << "----- Untrained Network -----" << std::endl;
-    // Input neurons with 1 synapse
-    Neuron input1, input2, input3;
 
-    // Output neurons with 3 synapses
-    Neuron output1(3), output2(3);
+    // Create a test network expecting 3 inputs and giving two outputs
+    NeuralNetwork testNetwork(3, 2);
 
-    // Input Values
-    double val1[] = {1}, val2[] = {0}, val3[] = {1};
+    // Run the network on the set [1, 0, 1]
+    auto results = testNetwork.Think({1, 0, 1});
 
-    // Pass Input into first layer of neurons, recording their output
-    double intermediate[] = {input1.Fire(val1), input2.Fire(val2), input3.Fire(val3)};
-
-    // Pass Intermediate into output, recording their output
-    double final[] = {output1.Fire(intermediate), output2.Fire(intermediate)};
-
-    // If the first output is higher, network things sum of input is positive
-    // Otherwise network things sum of input is negative
-    if (final[0] > final[1])
-        outputFile << "Network things 1 + 0 + 1 is Positive." << std::endl;
+    // Record the output
+    if (results[0] > results[1])
+        outputFile << "Network Thinks 1 + 0 + 1 is even!" << std::endl;
+    
     else
-        outputFile << "Network things 1 + 0 + 1 is Negative." << std::endl;
+        outputFile << "Network Thinks 1 + 0 + 1 is odd!" << std::endl;
 }
 
 // Helper Method to compare doubles

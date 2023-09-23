@@ -1,6 +1,6 @@
 // Test cases printed to a .log file
 #include <fstream>
-#include "../Network/Neuron.hpp"
+#include "../Network/Network.hpp"
 
 // Public Output File
 static std::ofstream outputFile("Test_Data.log");
