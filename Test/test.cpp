@@ -79,9 +79,9 @@ void SimpleNetwork()
     // If the first output is higher, network things sum of input is positive
     // Otherwise network things sum of input is negative
     if (final[0] > final[1])
-        outputFile << "Network things 1 + 0 + 1 is Positive." << std::endl;
+        outputFile << "Network things 1 + 0 + 1 is even." << std::endl;
     else
-        outputFile << "Network things 1 + 0 + 1 is Negative." << std::endl;
+        outputFile << "Network things 1 + 0 + 1 is odd." << std::endl;
 }
 
 // Helper Method to compare doubles

@@ -15,6 +15,17 @@ Neuron::Neuron(int numSynapses)
 // Returns: a normalized value between 0 and 1, representing the strength of the neuron's signal
 double Neuron::Fire(double input[])
 {
+    std::vector<double> conversionVector;
+
+    for (int i = 0; i < inputSynapses; i++)
+        conversionVector.push_back(input[i]);
+    
+    conversionVector.shrink_to_fit();
+
+    return Fire(conversionVector);
+}
+double Neuron::Fire(std::vector<double> input)
+{
     double sumValues = 0;
 
     for (int i = 0; i < inputSynapses; i++)
